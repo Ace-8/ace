@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link href="/movie/style.css" type="text/css" rel="stylesheet" />
+  <base />
+  <title>分类筛选-97影院_高清电影下载_免费在线电影观看</title>
+  <meta name="keywords" content="最新所有影视，所有影视排行榜，好看的所有影视" />
+  <meta name="description" content="所有影视排行榜，97影院_高清电影下载_免费在线电影观看" />
+ </head>
+ <body>
+  <div id="main">
+   <div class="pagelist">
+    <div class="movielist">
+     <ul class="mlist">
+      
+       #for(mv:mvList)
+	     <li>
+	     <a href="/movie/getDetailUrl?detailUrl=#(mv.detailUrl)" title="#(mv.name)" target="_blank" class="p"><img src="https://www.97soo.com#(mv.img)" alt="#(mv.name)" />
+		     <i>#(mv.pingfen)</i>
+		     <em>#(mv.jishu)</em>
+		 </a>
+		 <div class="info">
+		    <h2><a href="/movie/getDetailUrl?detailUrl=#(mv.detailUrl)" title="#(mv.name)" target="_blank">#(mv.name)</a><em>#(mv.nianfen)</em></h2>
+		    <!--  -->
+		    <em class="#(mv.xingxing)"></em>
+		    <p>#(mv.zhuangtai)</p>
+		    <p><i>#(mv.zhuyan)</i><i>#(mv.diqu)</i></p>
+		    <p><i>#(mv.leixing)</i></p>
+		    <p><i>#(mv.gengxin)</i></p>
+		    <span><a href="/movie/getDetailUrl?detailUrl=#(mv.detailUrl)" target="_blank">观看</a></span>
+		 </div>	
+	   </li>
+    	#end
+    	
+     </ul>
+     <div id="pages" >
+     
+     
+      <span>页次:#(pages)/#(pageCount)页</span>
+      
+      <a href="/movie/index?searchName=#(searchName)&pages=1">首页</a>
+      
+      #if(pages>=2) 
+      <a href="/movie/index?searchName=#(searchName)&pages=#(pages-1)">上一页</a>
+      #else 
+      <a href="#">上一页</a>
+      #end
+      
+      <a href="#">#(pages)</a>
+      
+      <a href="/movie/index?searchName=#(searchName)&pages=#(pages+1)">下一页</a>
+      <a href="/movie/index?searchName=#(searchName)&pages=#(pageCount)">尾页</a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
